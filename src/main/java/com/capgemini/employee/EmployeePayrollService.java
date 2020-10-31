@@ -24,7 +24,11 @@ public class EmployeePayrollService {
                 .findFirst()
                 .orElse(null);
     }
-
+    public int employeeBetweenDates()
+    {
+        this.employeePayrollList=EmployeePayrollDBService.getInstance().readDataWithDate();
+        return employeePayrollList.size();
+    }
     public boolean checkEmployeePayrollInSyncWithDB(String name) {
         List<EmployeePayrollData> employeePayrollDataList=EmployeePayrollDBService.getInstance().getEmployeePayrollData(name);
         return employeePayrollDataList.get(0).equals(getEmployeePayrollData(name));

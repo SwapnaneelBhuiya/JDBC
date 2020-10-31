@@ -42,4 +42,13 @@ public class EmployeePayrollServiceTest {
         boolean result=employeePayrollService.checkEmployeePayrollInSyncWithDB("Shikha");
         Assert.assertTrue(result);
     }
+    @Test
+    public void givenEmployeePayrollReturnsEmployeesWhoJoinedBetweenParticularDates()
+    {
+        EmployeePayrollService employeePayrollService=new EmployeePayrollService();
+        List<EmployeePayrollData> employeePayrollData=employeePayrollService.readEmployeePayrollData(DB_IO);
+        int res=employeePayrollService.employeeBetweenDates();
+        Assert.assertEquals(4,res);
+    }
+
 }

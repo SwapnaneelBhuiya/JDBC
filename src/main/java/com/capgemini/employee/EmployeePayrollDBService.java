@@ -43,7 +43,18 @@ public class EmployeePayrollDBService {
         catch(SQLException e){e.printStackTrace();}
         return employeePayrollList;
     }
-
+    public List<EmployeePayrollData> readDataWithDate()
+    {
+        String sql="select * from employee_payroll where start between cast('2019-01-01' as date) and date (now());";
+        List<EmployeePayrollData> employeePayrollList=new ArrayList<>();
+        try(Connection connection=this.getConnection();){
+            Statement statement=connection.createStatement();
+            ResultSet result=statement.executeQuery(sql);
+            employeePayrollList=this.getEmployeePayrollData((result));
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return employeePayrollList;
+    }
     private Connection getConnection() throws SQLException {
         String jdbcURL="jdbc:mysql://localhost:3306/payroll_service?useSSL=false";
         String userName="root";
