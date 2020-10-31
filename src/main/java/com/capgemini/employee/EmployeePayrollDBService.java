@@ -201,7 +201,7 @@ public class EmployeePayrollDBService {
         return employeePayrollData;
     }
 
-    public EmployeePayrollData addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) {
+    public EmployeePayrollData addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) throws SQLException {
         int id = -1;
         Connection connection = null;
         EmployeePayrollData employeePayrollData = null;
@@ -237,6 +237,11 @@ public class EmployeePayrollDBService {
         }
         catch (SQLException throwables) {
             throwables.printStackTrace();
+            connection.rollback();
+        }
+        finally{
+            try{connection.close();}
+            catch(Exception e){}
         }
         return employeePayrollData;
     }
