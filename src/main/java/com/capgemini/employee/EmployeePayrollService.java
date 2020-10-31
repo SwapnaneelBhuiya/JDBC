@@ -1,5 +1,6 @@
 package com.capgemini.employee;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class EmployeePayrollService {
         return null;
     }
 
-    public void addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) {
+    public void addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) throws SQLException {
         employeePayrollList.add(employeePayrollDBService.addEmployeeToPayroll(name,salary,startDate,gender));
     }
 
@@ -104,6 +105,9 @@ public class EmployeePayrollService {
         if(ioService.equals(IOService.DB_IO))
             this.employeePayrollList=EmployeePayrollDBService.getInstance().readData();
         return this.employeePayrollList;
+    }
+    public void removeEmployee(String name){
+        employeePayrollDBService.removeEmployeeData(name);
     }
 //    public void printData(IOService ioService)
 //    {

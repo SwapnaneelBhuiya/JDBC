@@ -245,4 +245,13 @@ public class EmployeePayrollDBService {
         }
         return employeePayrollData;
     }
+    public void removeEmployeeData(String name) {
+        String sql = String.format("update employee_payroll set isActive='F' where name='%s';",name);
+        try (Connection connection = this.getConnection()) {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

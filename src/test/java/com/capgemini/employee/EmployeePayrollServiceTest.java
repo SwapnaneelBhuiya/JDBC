@@ -3,6 +3,7 @@ package com.capgemini.employee;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -72,12 +73,21 @@ public class EmployeePayrollServiceTest {
         Assert.assertEquals(cont,3,0.00);
     }
     @Test
-    public void givenNewEmployee_WhenAdded_ShouldSyncWithDB()
-    {
+    public void givenNewEmployee_WhenAdded_ShouldSyncWithDB() throws SQLException {
         EmployeePayrollService employeePayrollService=new EmployeePayrollService();
         employeePayrollService.readEmployeePayrollData(DB_IO);
         employeePayrollService.addEmployeeToPayroll("Mark",500000.00,LocalDate.now(),"M");
         boolean result=employeePayrollService.checkEmployeePayrollInSyncWithDB("Mark");
         Assert.assertTrue(result);
+    }
+    @Test
+    public void givenEmployee_WhenRemoved_ShouldMatch() throws SQLException {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        employeePayrollService.readEmployeePayrollData(DB_IO);
+        employeePayrollService.removeEmployee("Shikha");
+        boolean result = employeePayrollService.checkEmployeePayrollInSyncWithDB("Shikha");
+        Assert.assertTrue(result);
+
+
     }
 }
