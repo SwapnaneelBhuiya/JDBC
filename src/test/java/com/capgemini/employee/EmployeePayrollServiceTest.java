@@ -3,6 +3,7 @@ package com.capgemini.employee;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
@@ -43,12 +44,16 @@ public class EmployeePayrollServiceTest {
         Assert.assertTrue(result);
     }
     @Test
-    public void givenEmployeePayrollReturnsEmployeesWhoJoinedBetweenParticularDates()
+    public void givenDateRange_WhenRetrieved_ShouldMatchEmployeeCount()
     {
         EmployeePayrollService employeePayrollService=new EmployeePayrollService();
-        List<EmployeePayrollData> employeePayrollData=employeePayrollService.readEmployeePayrollData(DB_IO);
-        int res=employeePayrollService.employeeBetweenDates();
-        Assert.assertEquals(4,res);
+        employeePayrollService.readEmployeePayrollData(DB_IO);
+        LocalDate startDate=LocalDate.of(2018,01,01);
+        LocalDate endDate= LocalDate.now();
+        List<EmployeePayrollData> employeePayrollData=
+                employeePayrollService.readEmployeePayrollForDateRange(DB_IO,startDate,endDate);
+        Assert.assertEquals(4,employeePayrollData.size());
+
     }
     @Test
     public void checkVariousOperations()

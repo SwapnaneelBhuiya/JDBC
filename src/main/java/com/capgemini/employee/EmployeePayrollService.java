@@ -1,5 +1,6 @@
 package com.capgemini.employee;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +10,13 @@ public class EmployeePayrollService {
         employeePayrollDBService=EmployeePayrollDBService.getInstance();
     }
     private static EmployeePayrollDBService employeePayrollDBService;
+
+    public List<EmployeePayrollData> readEmployeePayrollForDateRange(IOService ioService, LocalDate startDate, LocalDate endDate) {
+        if(ioService.equals(IOService.DB_IO))
+            return employeePayrollDBService.getEmployeePayrollForDateRange(startDate,endDate);
+        return null;
+    }
+
     public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
     private List<EmployeePayrollData> employeePayrollList;
     public void updateEmployeeSalary(String name, double salary) {
