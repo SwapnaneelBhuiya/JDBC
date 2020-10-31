@@ -17,6 +17,10 @@ public class EmployeePayrollService {
         return null;
     }
 
+    public void addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) {
+        employeePayrollList.add(employeePayrollDBService.addEmployeeToPayroll(name,salary,startDate,gender));
+    }
+
     public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
     private List<EmployeePayrollData> employeePayrollList;
     public void updateEmployeeSalary(String name, double salary) {

@@ -181,4 +181,23 @@ public class EmployeePayrollDBService {
         catch(SQLException e){e.printStackTrace();}
         return  employeePayrollList;
     }
+
+    public EmployeePayrollData addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) {
+        int id = -1;
+        EmployeePayrollData employeePayrollData = null;
+            String sql = String.format("Insert into employee_payroll(name,gender,salary,start) values ('%s','%s','%s','%s','%s','%s')", name, salary, Date.valueOf(startDate),gender);
+        try (Connection connection=this.getConnection();) {
+            Statement statement=connection.createStatement();
+            int rowAffected = statement.executeUpdate(sql, statement.RETURN_GENERATED_KEYS);
+            if (rowAffected == 1) {
+                ResultSet resultSet = statement.getGeneratedKeys();
+                if (resultSet.next())
+                    id = resultSet.getInt(1);
+            }
+            employeePayrollData = new EmployeePayrollData(id, name, salary, startDate);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employeePayrollData;
+    }
 }
