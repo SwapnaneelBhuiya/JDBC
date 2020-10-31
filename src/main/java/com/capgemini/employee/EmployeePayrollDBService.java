@@ -103,4 +103,79 @@ public class EmployeePayrollDBService {
         catch(SQLException e)
         {e.printStackTrace();}
     }
+
+    public double checkSumSalary(String gender) {
+        String sql="select sum(salary) as sum from employee_payroll where gender=? group by gender;";
+        double sum=0;
+        try(Connection connection=this.getConnection();){
+            employeePayrollDataStatement = connection.prepareStatement(sql);
+            employeePayrollDataStatement.setString(1, gender);
+            ResultSet resultSet = employeePayrollDataStatement.executeQuery();
+            while (resultSet.next()) {
+                sum = resultSet.getInt("sum");
+            }
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return sum;
+    }
+
+    public double checkAverage(String gender) {
+        String sql="select avg(salary) as avg from employee_payroll where gender=? group by gender;";
+        double avg=0;
+        try(Connection connection=this.getConnection();){
+            employeePayrollDataStatement = connection.prepareStatement(sql);
+            employeePayrollDataStatement.setString(1, gender);
+            ResultSet resultSet = employeePayrollDataStatement.executeQuery();
+            while (resultSet.next()) {
+                avg = resultSet.getInt("avg");
+            }
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return avg;
+    }
+
+    public double checkMinimum(String gender) {
+        String sql="select min(salary) as min from employee_payroll where gender=? group by gender;";
+        double min=0;
+        try(Connection connection=this.getConnection();){
+            employeePayrollDataStatement = connection.prepareStatement(sql);
+            employeePayrollDataStatement.setString(1, gender);
+            ResultSet resultSet = employeePayrollDataStatement.executeQuery();
+            while (resultSet.next()) {
+                min = resultSet.getInt("min");
+            }
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return min;
+    }
+
+    public double checkMaximum(String gender) {
+        String sql="select max(salary) as max from employee_payroll where gender=? group by gender;";
+        double max=0;
+        try(Connection connection=this.getConnection();){
+            employeePayrollDataStatement = connection.prepareStatement(sql);
+            employeePayrollDataStatement.setString(1, gender);
+            ResultSet result = employeePayrollDataStatement.executeQuery();
+            while (result.next()) {
+                max = result.getDouble("max");
+            }
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return max;
+    }
+
+    public double checkCounts(String gender) {
+        String sql="SELECT COUNT(*) as Count FROM employee_payroll WHERE gender = ?;";
+        double count=0;
+        try(Connection connection=this.getConnection();){
+            employeePayrollDataStatement = connection.prepareStatement(sql);
+            employeePayrollDataStatement.setString(1, gender);
+            ResultSet resultSet = employeePayrollDataStatement.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("Count");
+            }
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return count;
+    }
 }

@@ -4,5 +4,3 @@
 Connection is successful
 PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful

@@ -50,5 +50,20 @@ public class EmployeePayrollServiceTest {
         int res=employeePayrollService.employeeBetweenDates();
         Assert.assertEquals(4,res);
     }
-
+    @Test
+    public void checkVariousOperations()
+    {
+        EmployeePayrollService employeePayrollService=new EmployeePayrollService();
+        List<EmployeePayrollData> employeePayrollData=employeePayrollService.readEmployeePayrollData(DB_IO);
+        double sum= employeePayrollService.checksSum("M");
+        double avg= employeePayrollService.checkAverage("M");
+        double min= employeePayrollService.checkMin("M");
+        double max= employeePayrollService.checkMax("M");
+        double cont= employeePayrollService.checkCount("M");
+        Assert.assertEquals(avg, 193333,0.33333333334);
+        Assert.assertEquals(sum,580000,0.00);
+        Assert.assertEquals(min,80000,0.00);
+        Assert.assertEquals(max,400000,0.00);
+        Assert.assertEquals(cont,3,0.00);
+    }
 }

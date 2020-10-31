@@ -9,10 +9,10 @@ public class EmployeePayrollService {
         employeePayrollDBService=EmployeePayrollDBService.getInstance();
     }
     private static EmployeePayrollDBService employeePayrollDBService;
-
+    public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
+    private List<EmployeePayrollData> employeePayrollList;
     public void updateEmployeeSalary(String name, double salary) {
-        EmployeePayrollDBService ob=employeePayrollDBService;
-        int result=ob.updateEmployeeData(name,salary);
+        int result=EmployeePayrollDBService.getInstance().updateEmployeeData(name,salary);
         if(result==0) return;
         EmployeePayrollData employeePayrollData=this.getEmployeePayrollData(name);
         if(employeePayrollData!=null) employeePayrollData.salary=salary;
@@ -33,12 +33,34 @@ public class EmployeePayrollService {
         List<EmployeePayrollData> employeePayrollDataList=EmployeePayrollDBService.getInstance().getEmployeePayrollData(name);
         return employeePayrollDataList.get(0).equals(getEmployeePayrollData(name));
     }
-
-    public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
-    private List<EmployeePayrollData> employeePayrollList;
     public EmployeePayrollService(List<EmployeePayrollData> emp)
     {
         this();this.employeePayrollList=emp;
+    }
+    public double checksSum(String gender)
+    {
+        double sum=EmployeePayrollDBService.getInstance().checkSumSalary(gender);
+        return sum;
+    }
+    public double checkAverage(String gender)
+    {
+        double avg=EmployeePayrollDBService.getInstance().checkAverage(gender);
+        return avg;
+    }
+    public double checkMin(String gender)
+    {
+        double min=EmployeePayrollDBService.getInstance().checkMinimum(gender);
+        return min;
+    }
+    public double checkMax(String gender)
+    {
+        double max=EmployeePayrollDBService.getInstance().checkMaximum(gender);
+        return max;
+    }
+    public double checkCount(String gender)
+    {
+        double cont=EmployeePayrollDBService.getInstance().checkCounts(gender);
+        return cont;
     }
 //    public void writeEmployeePayrollData(IOService ioService)
 //    {

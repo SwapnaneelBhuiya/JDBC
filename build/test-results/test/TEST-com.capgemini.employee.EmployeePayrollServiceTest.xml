@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.capgemini.employee.EmployeePayrollServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-10-31T06:16:59" hostname="Swapnaneels-MacBook-Air.local" time="0.457">
+<testsuite name="com.capgemini.employee.EmployeePayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-31T08:52:50" hostname="Swapnaneels-MacBook-Air.local" time="0.571">
   <properties/>
-  <testcase name="givenNewSalaryForEmployee_WhenUpdated_ShouldMatch" classname="com.capgemini.employee.EmployeePayrollServiceTest" time="0.444"/>
-  <testcase name="givenEmployeePayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount" classname="com.capgemini.employee.EmployeePayrollServiceTest" time="0.012"/>
+  <testcase name="givenNewSalaryForEmployee_WhenUpdated_ShouldMatch" classname="com.capgemini.employee.EmployeePayrollServiceTest" time="0.571"/>
   <system-out><![CDATA[Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
 Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
