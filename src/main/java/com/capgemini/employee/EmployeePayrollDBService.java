@@ -34,26 +34,13 @@ public class EmployeePayrollDBService {
     public List<EmployeePayrollData> readData()
     {
         String sql="SELECT * FROM employee_payroll;";
-        List<EmployeePayrollData> employeePayrollList=new ArrayList<>();
-        try(Connection connection=this.getConnection();){
-            Statement statement=connection.createStatement();
-            ResultSet result=statement.executeQuery(sql);
-            employeePayrollList=this.getEmployeePayrollData((result));
-        }
-        catch(SQLException e){e.printStackTrace();}
-        return employeePayrollList;
+        return this.getEmployeePayrollDataUsingDB(sql);
+
     }
     public List<EmployeePayrollData> readDataWithDate()
     {
         String sql="select * from employee_payroll where start between cast('2019-01-01' as date) and date (now());";
-        List<EmployeePayrollData> employeePayrollList=new ArrayList<>();
-        try(Connection connection=this.getConnection();){
-            Statement statement=connection.createStatement();
-            ResultSet result=statement.executeQuery(sql);
-            employeePayrollList=this.getEmployeePayrollData((result));
-        }
-        catch(SQLException e){e.printStackTrace();}
-        return employeePayrollList;
+        return this.getEmployeePayrollDataUsingDB(sql);
     }
     private Connection getConnection() throws SQLException {
         String jdbcURL="jdbc:mysql://localhost:3306/payroll_service?useSSL=false";
@@ -177,5 +164,21 @@ public class EmployeePayrollDBService {
         }
         catch(SQLException e){e.printStackTrace();}
         return count;
+    }
+
+    public List<EmployeePayrollData> getEmployeePayrollForDateRange(LocalDate startDate, LocalDate endDate) {
+        String sql=String.format("Select * from employee_payroll where start between '%s' and '%s';",Date.valueOf(startDate),Date.valueOf(endDate));
+        return this.getEmployeePayrollDataUsingDB(sql);
+    }
+
+    private List<EmployeePayrollData> getEmployeePayrollDataUsingDB(String sql) {
+        List<EmployeePayrollData> employeePayrollList=new ArrayList<>();
+        try(Connection connection=this.getConnection();){
+            Statement statement=connection.createStatement();
+            ResultSet result=statement.executeQuery(sql);
+            employeePayrollList=this.getEmployeePayrollData((result));
+        }
+        catch(SQLException e){e.printStackTrace();}
+        return  employeePayrollList;
     }
 }
