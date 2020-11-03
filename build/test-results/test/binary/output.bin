@@ -24,6 +24,31 @@
 PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
 Employee Added: Anil
-¢	[id=5 name= Jeff Bezos salary= 100000.0, id=6 name= Bill gates salary= 200000.0, id=7 name= Mark Zuckerberg salary= 300000.0, id=8 name= Sunder salary= 600000.0, id=9 name= Mukesh salary= 1000000.0, id=10 name= Anil salary= 200000.0, id=11 name= Jeff Bezos salary= 100000.0, id=12 name= Bill gates salary= 200000.0, id=13 name= Mark Zuckerberg salary= 300000.0, id=14 name= Sunder salary= 600000.0, id=15 name= Mukesh salary= 1000000.0, id=16 name= Anil salary= 200000.0, id=17 name= Jeff Bezos salary= 100000.0, id=18 name= Bill gates salary= 200000.0, id=19 name= Mark Zuckerberg salary= 300000.0, id=20 name= Sunder salary= 600000.0, id=21 name= Mukesh salary= 1000000.0, id=22 name= Anil salary= 200000.0, id=23 name= Jeff Bezos salary= 100000.0, id=24 name= Bill gates salary= 200000.0, id=25 name= Mark Zuckerberg salary= 300000.0, id=26 name= Sunder salary= 600000.0, id=27 name= Mukesh salary= 1000000.0, id=28 name= Anil salary= 200000.0, id=29 name= Jeff Bezos salary= 100000.0, id=30 name= Bill gates salary= 200000.0, id=31 name= Mark Zuckerberg salary= 300000.0, id=32 name= Sunder salary= 600000.0, id=33 name= Mukesh salary= 1000000.0, id=34 name= Anil salary= 200000.0]
-$Duration without thread:PT0.123548S
-!Duration with Thread:PT0.000004S
+ï[id=35 name= Jeff Bezos salary= 100000.0, id=36 name= Bill gates salary= 200000.0, id=37 name= Mark Zuckerberg salary= 300000.0, id=38 name= Sunder salary= 600000.0, id=39 name= Mukesh salary= 1000000.0, id=40 name= Anil salary= 200000.0]
+$Duration without thread:PT0.518118S
+!Employee Being Added: Jeff Bezos
+!Employee Being Added: Bill gates
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+&Employee Being Added: Mark Zuckerberg
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful
+Connection is successful
+Connection is successful
+Employee Being Added: Sunder
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Employee Added Jeff Bezos
+Employee Added Bill gates
+Connection is successful
+Employee Added Mark Zuckerberg
+Employee Added Sunder
+Employee Being Added: Mukesh
+Employee Being Added: Anil
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful
+Connection is successful
+Employee Added Mukesh
+Employee Added Anil
+Ý[id=35 name= Jeff Bezos salary= 100000.0, id=36 name= Bill gates salary= 200000.0, id=37 name= Mark Zuckerberg salary= 300000.0, id=38 name= Sunder salary= 600000.0, id=39 name= Mukesh salary= 1000000.0, id=40 name= Anil salary= 200000.0, id=41 name= Jeff Bezos salary= 100000.0, id=42 name= Bill gates salary= 200000.0, id=43 name= Mark Zuckerberg salary= 300000.0, id=44 name= Sunder salary= 600000.0, id=46 name= Mukesh salary= 1000000.0, id=45 name= Anil salary= 200000.0]
+!Duration with Thread:PT0.177294S

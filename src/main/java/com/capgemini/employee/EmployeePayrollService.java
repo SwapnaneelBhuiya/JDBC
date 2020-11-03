@@ -47,7 +47,7 @@ public class EmployeePayrollService{
                         throwables.printStackTrace();
                     }
                     employeeAdditionStatus.put(employeePayrollData.hashCode(),true);
-            System.out.println("Employee Added "+Thread.currentThread().getName());
+            System.out.println("Employee Added "+employeePayrollData.name);
         };
         Thread thread=new Thread(task,employeePayrollData.name);
         thread.start();
