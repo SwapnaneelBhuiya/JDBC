@@ -61,6 +61,10 @@ public class EmployeePayrollService{
         System.out.println(this.employeePayrollList);
     }
 
+    public int countEntries(IOService dbIo) {
+        return this.employeePayrollList.size();
+    }
+
     public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
     private List<EmployeePayrollData> employeePayrollList;
     public void updateEmployeeSalary(String name, double salary) {
