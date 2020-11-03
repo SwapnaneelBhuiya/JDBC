@@ -1,6 +1,29 @@
 PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
+!Employee Being added: Jeff Bezos
 PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
+Employee Added: Jeff Bezos
+!Employee Being added: Bill gates
 PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
 Connection is successful
+Employee Added: Bill gates
+&Employee Being added: Mark Zuckerberg
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful
+ Employee Added: Mark Zuckerberg
+Employee Being added: Sunder
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful
+Employee Added: Sunder
+Employee Being added: Mukesh
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful
+Employee Added: Mukesh
+Employee Being added: Anil
+PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
+Connection is successful
+Employee Added: Anil
+¢	[id=5 name= Jeff Bezos salary= 100000.0, id=6 name= Bill gates salary= 200000.0, id=7 name= Mark Zuckerberg salary= 300000.0, id=8 name= Sunder salary= 600000.0, id=9 name= Mukesh salary= 1000000.0, id=10 name= Anil salary= 200000.0, id=11 name= Jeff Bezos salary= 100000.0, id=12 name= Bill gates salary= 200000.0, id=13 name= Mark Zuckerberg salary= 300000.0, id=14 name= Sunder salary= 600000.0, id=15 name= Mukesh salary= 1000000.0, id=16 name= Anil salary= 200000.0, id=17 name= Jeff Bezos salary= 100000.0, id=18 name= Bill gates salary= 200000.0, id=19 name= Mark Zuckerberg salary= 300000.0, id=20 name= Sunder salary= 600000.0, id=21 name= Mukesh salary= 1000000.0, id=22 name= Anil salary= 200000.0, id=23 name= Jeff Bezos salary= 100000.0, id=24 name= Bill gates salary= 200000.0, id=25 name= Mark Zuckerberg salary= 300000.0, id=26 name= Sunder salary= 600000.0, id=27 name= Mukesh salary= 1000000.0, id=28 name= Anil salary= 200000.0, id=29 name= Jeff Bezos salary= 100000.0, id=30 name= Bill gates salary= 200000.0, id=31 name= Mark Zuckerberg salary= 300000.0, id=32 name= Sunder salary= 600000.0, id=33 name= Mukesh salary= 1000000.0, id=34 name= Anil salary= 200000.0]
+$Duration without thread:PT0.123548S
+!Duration with Thread:PT0.000004S

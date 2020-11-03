@@ -2,11 +2,10 @@ package com.capgemini.employee;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class EmployeePayrollService {
+public class EmployeePayrollService{
+
     public EmployeePayrollService() {
         employeePayrollDBService=EmployeePayrollDBService.getInstance();
     }
@@ -20,6 +19,46 @@ public class EmployeePayrollService {
 
     public void addEmployeeToPayroll(String name, double salary, LocalDate startDate, String gender) throws SQLException {
         employeePayrollList.add(employeePayrollDBService.addEmployeeToPayroll(name,salary,startDate,gender));
+    }
+
+    public void addEmployeesToPayroll(List<EmployeePayrollData> employeePayrollDataList) {
+        employeePayrollDataList.forEach(employeePayrollData -> {
+            System.out.println("Employee Being added: "+employeePayrollData.name);
+            try {
+                this.addEmployeeToPayroll(employeePayrollData.name,employeePayrollData.salary,employeePayrollData.startDate,employeePayrollData.gender);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            System.out.println("Employee Added: "+employeePayrollData.name);
+        });
+        System.out.println(this.employeePayrollList);
+
+    }
+
+    public void addEmployeesToPayrollWithThreads(List<EmployeePayrollData> employeePayrollDataList) {
+        Map<Integer, Boolean> employeeAdditionStatus=new HashMap<Integer,Boolean>();
+        employeePayrollDataList.forEach(employeePayrollData ->{
+                Runnable task=()->{
+            employeeAdditionStatus.put(employeePayrollData.hashCode(),false);
+            System.out.println("Employee Being Added: "+Thread.currentThread().getName());
+                    try {
+                        this.addEmployeeToPayroll(employeePayrollData.name,employeePayrollData.salary,employeePayrollData.startDate,employeePayrollData.gender);
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
+                    employeeAdditionStatus.put(employeePayrollData.hashCode(),true);
+            System.out.println("Employee Added "+Thread.currentThread().getName());
+        };
+        Thread thread=new Thread(task,employeePayrollData.name);
+        thread.start();
+    });
+        while(employeeAdditionStatus.containsValue(false)){
+            try{
+                Thread.sleep(20);
+            }
+            catch(InterruptedException e){}
+        }
+        System.out.println(this.employeePayrollList);
     }
 
     public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
