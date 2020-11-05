@@ -1,54 +1,27 @@
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-!Employee Being added: Jeff Bezos
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Jeff Bezos
-!Employee Being added: Bill gates
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Bill gates
-&Employee Being added: Mark Zuckerberg
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
- Employee Added: Mark Zuckerberg
-Employee Being added: Sunder
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Sunder
-Employee Being added: Mukesh
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Mukesh
-Employee Being added: Anil
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Anil
-ï[id=35 name= Jeff Bezos salary= 100000.0, id=36 name= Bill gates salary= 200000.0, id=37 name= Mark Zuckerberg salary= 300000.0, id=38 name= Sunder salary= 600000.0, id=39 name= Mukesh salary= 1000000.0, id=40 name= Anil salary= 200000.0]
-$Duration without thread:PT0.518118S
-!Employee Being Added: Jeff Bezos
-!Employee Being Added: Bill gates
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-&Employee Being Added: Mark Zuckerberg
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Connection is successful
-Connection is successful
-Employee Being Added: Sunder
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Employee Added Jeff Bezos
-Employee Added Bill gates
-Connection is successful
-Employee Added Mark Zuckerberg
-Employee Added Sunder
-Employee Being Added: Mukesh
-Employee Being Added: Anil
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-PConnecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Connection is successful
-Employee Added Mukesh
-Employee Added Anil
-Ý[id=35 name= Jeff Bezos salary= 100000.0, id=36 name= Bill gates salary= 200000.0, id=37 name= Mark Zuckerberg salary= 300000.0, id=38 name= Sunder salary= 600000.0, id=39 name= Mukesh salary= 1000000.0, id=40 name= Anil salary= 200000.0, id=41 name= Jeff Bezos salary= 100000.0, id=42 name= Bill gates salary= 200000.0, id=43 name= Mark Zuckerberg salary= 300000.0, id=44 name= Sunder salary= 600000.0, id=46 name= Mukesh salary= 1000000.0, id=45 name= Anil salary= 200000.0]
-!Duration with Thread:PT0.177294S
+(EMPLOYEE PAYROLL ENTRIES IN JSONServer:
+[
+  {
+    "id": 1,
+    "name": "Pankaj",
+    "salary": "10000",
+    "gender": "M"
+  },
+  {
+    "name": "David",
+    "salary": "5000",
+    "id": 2,
+    "gender": "M"
+  },
+  {
+    "id": 3
+  },
+  {
+    "id": 4
+  },
+  {
+    "id": 5
+  },
+  {
+    "id": 6
+  }
+]

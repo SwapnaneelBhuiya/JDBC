@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.884s</div>
+<div class="counter">2.674s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,88 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="givenNewSalaryForEmployee_WhenUpdated_ShouldMatch200Response"></a>
+<h3 class="failures">givenNewSalaryForEmployee_WhenUpdated_ShouldMatch200Response</h3>
+<span class="code">
+<pre>java.lang.NullPointerException
+	at com.capgemini.employee.EmployeePayrollService.lambda$getEmployeePayrollData$3(EmployeePayrollService.java:94)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:176)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1632)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+	at com.capgemini.employee.EmployeePayrollService.getEmployeePayrollData(EmployeePayrollService.java:95)
+	at com.capgemini.employee.EmployeePayrollService.updateEmployeeSalary(EmployeePayrollService.java:88)
+	at com.capgemini.employee.EmployeePayrollServiceTest.givenNewSalaryForEmployee_WhenUpdated_ShouldMatch200Response(EmployeePayrollServiceTest.java:185)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,69 +153,42 @@
 </tr>
 </thead>
 <tr>
-<td class="success">given6Employees_WhenAddedToDB_ShouldMatchEmployeeEntries</td>
-<td class="success">2.884s</td>
-<td class="success">passed</td>
+<td class="failures">givenNewSalaryForEmployee_WhenUpdated_ShouldMatch200Response</td>
+<td class="failures">2.674s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Being added: Jeff Bezos
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Jeff Bezos
-Employee Being added: Bill gates
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Bill gates
-Employee Being added: Mark Zuckerberg
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Mark Zuckerberg
-Employee Being added: Sunder
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Sunder
-Employee Being added: Mukesh
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Mukesh
-Employee Being added: Anil
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Employee Added: Anil
-[id=35 name= Jeff Bezos salary= 100000.0, id=36 name= Bill gates salary= 200000.0, id=37 name= Mark Zuckerberg salary= 300000.0, id=38 name= Sunder salary= 600000.0, id=39 name= Mukesh salary= 1000000.0, id=40 name= Anil salary= 200000.0]
-Duration without thread:PT0.518118S
-Employee Being Added: Jeff Bezos
-Employee Being Added: Bill gates
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Employee Being Added: Mark Zuckerberg
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Connection is successful
-Connection is successful
-Employee Being Added: Sunder
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Employee Added Jeff Bezos
-Employee Added Bill gates
-Connection is successful
-Employee Added Mark Zuckerberg
-Employee Added Sunder
-Employee Being Added: Mukesh
-Employee Being Added: Anil
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connecting to database:jdbc:mysql://localhost:3306/payroll_service?useSSL=false
-Connection is successful
-Connection is successful
-Employee Added Mukesh
-Employee Added Anil
-[id=35 name= Jeff Bezos salary= 100000.0, id=36 name= Bill gates salary= 200000.0, id=37 name= Mark Zuckerberg salary= 300000.0, id=38 name= Sunder salary= 600000.0, id=39 name= Mukesh salary= 1000000.0, id=40 name= Anil salary= 200000.0, id=41 name= Jeff Bezos salary= 100000.0, id=42 name= Bill gates salary= 200000.0, id=43 name= Mark Zuckerberg salary= 300000.0, id=44 name= Sunder salary= 600000.0, id=46 name= Mukesh salary= 1000000.0, id=45 name= Anil salary= 200000.0]
-Duration with Thread:PT0.177294S
+<pre>EMPLOYEE PAYROLL ENTRIES IN JSONServer:
+[
+  {
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;Pankaj&quot;,
+    &quot;salary&quot;: &quot;10000&quot;,
+    &quot;gender&quot;: &quot;M&quot;
+  },
+  {
+    &quot;name&quot;: &quot;David&quot;,
+    &quot;salary&quot;: &quot;5000&quot;,
+    &quot;id&quot;: 2,
+    &quot;gender&quot;: &quot;M&quot;
+  },
+  {
+    &quot;id&quot;: 3
+  },
+  {
+    &quot;id&quot;: 4
+  },
+  {
+    &quot;id&quot;: 5
+  },
+  {
+    &quot;id&quot;: 6
+  }
+]
 </pre>
 </span>
 </div>
@@ -152,7 +200,7 @@ Duration with Thread:PT0.177294S
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.3</a> at 03-Nov-2020, 12:46:14 PM</p>
+<a href="http://www.gradle.org">Gradle 6.3</a> at 05-Nov-2020, 2:38:38 PM</p>
 </div>
 </div>
 </body>

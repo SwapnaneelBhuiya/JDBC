@@ -65,6 +65,13 @@ public class EmployeePayrollService{
         return this.employeePayrollList.size();
     }
 
+    public void addEmployeeToPayroll(EmployeePayrollData employeePayrollData, IOService ioService) throws SQLException {
+        if(ioService.equals(IOService.DB_IO))
+            this.addEmployeeToPayroll(employeePayrollData.name,employeePayrollData.salary,employeePayrollData.startDate,employeePayrollData.gender);
+        else
+            employeePayrollList.add(employeePayrollData);
+    }
+
     public enum IOService{CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
     private List<EmployeePayrollData> employeePayrollList;
     public void updateEmployeeSalary(String name, double salary) {
@@ -73,7 +80,15 @@ public class EmployeePayrollService{
         EmployeePayrollData employeePayrollData=this.getEmployeePayrollData(name);
         if(employeePayrollData!=null) employeePayrollData.salary=salary;
     }
-    private EmployeePayrollData getEmployeePayrollData(String name)
+    public void updateEmployeeSalary(String name, double salary, IOService ioService) {
+        if(ioService.equals(IOService.DB_IO)){
+            int result=EmployeePayrollDBService.getInstance().updateEmployeeData(name,salary);
+            if(result==0) return;
+        }
+        EmployeePayrollData employeePayrollData=this.getEmployeePayrollData(name);
+        if(employeePayrollData!=null) employeePayrollData.salary=salary;
+    }
+    public EmployeePayrollData getEmployeePayrollData(String name)
     {
         return this.employeePayrollList.stream()
                 .filter(employeePayrollDataItem -> employeePayrollDataItem.name.equals(name))
@@ -91,7 +106,7 @@ public class EmployeePayrollService{
     }
     public EmployeePayrollService(List<EmployeePayrollData> emp)
     {
-        this();this.employeePayrollList=emp;
+        this();this.employeePayrollList=new ArrayList<>(emp);
     }
     public double checksSum(String gender)
     {
